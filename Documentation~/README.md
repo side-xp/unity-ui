@@ -1,4 +1,4 @@
-# SideXP - UI
+# UI
 
 Icons and utilities for making and managing clean interfaces.
 

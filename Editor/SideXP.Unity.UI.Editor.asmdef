@@ -1,0 +1,20 @@
+{
+    "name": "SideXP.Unity.UI.Editor",
+    "rootNamespace": "SideXP.UI.EditorOnly",
+    "references": [
+        "SideXP.Unity.UI",
+        "SideXP.Unity.Core",
+        "SideXP.Unity.Core.Editor"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

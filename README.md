@@ -1,10 +1,17 @@
-# Sideways Experiments Unity Package (@todo)
+# UI
 
-<!-- @todo Write package description and minimum Unity version if applicable -->
+Icons and utilities for making and managing clean interfaces.
+
+As of now, this package is mostly meant to allow using [Material Icons](https://fonts.google.com/icons?icon.set=Material+Icons&icon.style=Rounded) for our custom editors.
 
 ## Features
 
-<!-- @todo Describe the features included in this package -->
+- [Material Icons](https://fonts.google.com/icons?icon.set=Material+Icons&icon.style=Rounded) as sprites usable in both Editor and Runtime
+- Icons browser in Editor
+
+## Dependencies
+
+🔗 Requires our [Core library package](https://github.com/side-xp/unity-core)
 
 ## Installation
 
@@ -28,7 +35,7 @@
 
 ## Documentation & Help
 
-Complete documentation available at https://side-xp.github.io/@todo
+Complete documentation available at https://side-xp.github.io/unity-ui
 
 If you need help or just want to chat with the community and the *Sideways Experiments* core team, you're welcome to join our [Discord server](https://discord.gg/bMK2d47JaE)!
 

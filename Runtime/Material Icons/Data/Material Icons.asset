@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3cbbab78ed5df440b8656898e3ea4d2, type: 3}
+  m_Name: Material Icons
+  m_EditorClassIdentifier: 
+  _blackIconsAtlas:
+    IconsAtlas: {fileID: 2800000, guid: 8f160c7c7385a7e42a5c0619e8dd7a64, type: 3}
+    IconsAtlas2x: {fileID: 2800000, guid: af1e59e46296f3b43bacd2a0a17045c2, type: 3}
+  _whiteIconsAtlas:
+    IconsAtlas: {fileID: 2800000, guid: 9b1fcfa78c222124991da23015184831, type: 3}
+    IconsAtlas2x: {fileID: 2800000, guid: f716974ddb436704aa6b7bdf495652d4, type: 3}
+  _mappings: {fileID: 4900000, guid: 762b67c738b6f694cbe2f9cf52f393e3, type: 3}
+  _mappings2x: {fileID: 4900000, guid: ce0365b41cc92c24c9219db5e8712330, type: 3}

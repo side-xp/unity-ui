@@ -1,9 +1,3 @@
-/**
- * Sideways Experiments (c) 2023
- * https://sideways-experiments.com
- * Contact: dev@side-xp.com
- */
-
 using System.IO;
 
 using UnityEngine;

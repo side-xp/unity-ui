@@ -8,7 +8,7 @@ If you just need to search for icons, we recommend using the [Material Icons web
 
 If you want to see the available icons as displayed in the editor, go to `Tools > Sideways Experiments > Editor Icons List`, and navigate through pages. Categories are based on the folders from the [Material Icons GitHub project](https://github.com/google/material-design-icons/tree/master/png).
 
-![Icons list window](./img/editor-icons-list.png)
+![Icons list window](../img/editor-icons-list.png)
 
 ## Display an icon in an editor view
 

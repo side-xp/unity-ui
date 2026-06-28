@@ -1,8 +1,8 @@
 {
   "name": "com.side-xp.ui",
   "version": "1.0.0",
-  "description": "ui",
-  "displayName": "SideXP -UI",
+  "description": "Icons and utilities for making and managing clean interfaces.",
+  "displayName": "SideXP - UI",
   "unity": "2021.3",
   "author": {
     "name": "Sideways Experiments",

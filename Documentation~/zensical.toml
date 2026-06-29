@@ -2,7 +2,7 @@
 # https://zensical.org/docs/setup/basics/#settings
 
 [project]
-site_name = "SideXP - Unity UI package"
+site_name = "SideXP - UI (Unity)"
 site_description = "Icons and utilities for making and managing clean interfaces."
 site_author = "Sideways Experiments"
 copyright = """

@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 using UnityEngine;
 
-namespace SideXP.UI
+namespace SideXP.UI.EditorOnly
 {
 
     /// <summary>

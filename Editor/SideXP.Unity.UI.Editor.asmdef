@@ -2,7 +2,6 @@
     "name": "SideXP.Unity.UI.Editor",
     "rootNamespace": "SideXP.UI.EditorOnly",
     "references": [
-        "SideXP.Unity.UI",
         "SideXP.Unity.Core",
         "SideXP.Unity.Core.Editor"
     ],

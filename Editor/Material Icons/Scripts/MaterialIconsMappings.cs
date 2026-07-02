@@ -1,4 +1,4 @@
-namespace SideXP.UI
+namespace SideXP.UI.EditorOnly
 {
 
     /// <summary>

@@ -6,7 +6,7 @@ As of now, this package is mostly meant to allow using [Material Icons](https://
 
 ## Features
 
-- [Material Icons](https://fonts.google.com/icons?icon.set=Material+Icons&icon.style=Rounded) as sprites usable in both Editor and Runtime
+- [Material Icons](https://fonts.google.com/icons?icon.set=Material+Icons&icon.style=Rounded) available in the Editor, handy for custom editors, property drawers and editor windows
 - Icons browser in Editor
 
 ## Dependencies

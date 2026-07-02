@@ -4,7 +4,7 @@ using UnityEngine;
 
 using SideXP.Core;
 
-namespace SideXP.UI
+namespace SideXP.UI.EditorOnly
 {
 
     /// <summary>

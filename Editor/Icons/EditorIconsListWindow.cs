@@ -267,7 +267,7 @@ namespace SideXP.UI.EditorOnly
                 rect.x += rect.width + MoreGUI.HMargin;
                 rect.width = smallButtonWidth;
                 if (EditorIcons.IconButton(rect, "last_page"))
-                    pagination.Page = pagination.PagesCount;
+                    pagination.Page = pagination.PagesCount - 1;
             }
         }
 

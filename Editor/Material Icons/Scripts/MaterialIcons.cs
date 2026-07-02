@@ -187,6 +187,9 @@ namespace SideXP.UI.EditorOnly
         /// <returns>Returns the found category name.</returns>
         public string GetIconCategoryName(string iconName)
         {
+            if (_categories == null)
+                ReloadIconInfos();
+
             iconName = iconName.ToLower();
             foreach (KeyValuePair<string, List<string>> categoryInfo in _categories)
             {

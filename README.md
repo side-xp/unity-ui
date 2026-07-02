@@ -1,6 +1,6 @@
 # SideXP - UI (Unity)
 
-Icons and utilities for making and managing clean interfaces.
+Editor UI helpers for using icons in custom editors.
 
 As of now, this package is mostly meant to allow using [Material Icons](https://fonts.google.com/icons?icon.set=Material+Icons&icon.style=Rounded) for our custom editors.
 

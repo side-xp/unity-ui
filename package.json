@@ -1,7 +1,7 @@
 {
   "name": "com.side-xp.ui",
   "version": "1.1.0",
-  "description": "Icons and utilities for making and managing clean interfaces.",
+  "description": "Editor UI helpers for using icons in custom editors.",
   "displayName": "SideXP - UI",
   "unity": "2021.3",
   "author": {

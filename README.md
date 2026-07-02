@@ -53,10 +53,14 @@ docs:only:end -->
 ## License
 
 <!-- docs:remove:start -->
-This project is licensed under the [MIT License](./LICENSE.md).
+This project's own source code is licensed under the [MIT License](./LICENSE.md).
+
+This package also bundles [Material Design Icons](https://github.com/google/material-design-icons) by Google, which are licensed separately under the Apache License 2.0. See [Third Party Notices.md](./Third%20Party%20Notices.md) for details.
 <!-- docs:remove:end -->
 <!-- docs:only:start
-This project is licensed under the [MIT License](https://mit-license.org).
+This project's own source code is licensed under the [MIT License](https://mit-license.org).
+
+This package also bundles [Material Design Icons](https://github.com/google/material-design-icons) by Google, which are licensed separately under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0). See the `Third Party Notices.md` file in the package for details.
 docs:only:end -->
 
 ---

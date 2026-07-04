@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 using UnityEngine;
 
-namespace SideXP.UI
+namespace SideXP.UI.EditorOnly
 {
 
     /// <summary>
@@ -18,6 +18,15 @@ namespace SideXP.UI
         {
             public Texture2D IconsAtlas = null;
             public Texture2D IconsAtlas2x = null;
+        }
+
+        /// <summary>
+        /// Locates an icon inside an atlas: its mapping entry and the size (in pixels) of the atlas cells.
+        /// </summary>
+        private struct IconLocation
+        {
+            public MaterialIconsMappings.Icon Icon;
+            public int IconSize;
         }
 
         #endregion
@@ -67,6 +76,22 @@ namespace SideXP.UI
         /// </summary>
         private string[] _iconNames = null;
 
+        /// <summary>
+        /// Caches the icon textures extracted from the atlases, so a given icon is sliced only once instead of on every call.<br/>
+        /// Keys are built by <see cref="MakeCacheKey(string, bool, bool)"/>.
+        /// </summary>
+        private Dictionary<string, Texture2D> _iconTexturesCache = new Dictionary<string, Texture2D>();
+
+        /// <summary>
+        /// Lookup of icons by name for the regular-size mappings, so we don't scan the whole atlas on each call. Built lazily by
+        /// <see cref="GetIconsLookup(bool)"/>.
+        /// </summary>
+        private Dictionary<string, IconLocation> _iconsLookup = null;
+
+        /// <inheritdoc cref="_iconsLookup"/>
+        /// <remarks>For the doubled-size mappings.</remarks>
+        private Dictionary<string, IconLocation> _iconsLookup2x = null;
+
         #endregion
 
 
@@ -115,28 +140,29 @@ namespace SideXP.UI
         public Texture2D GetIcon(string name, bool white = false, bool x2 = false)
         {
             name = name.ToLower();
-            MaterialIconsMappings mappings = x2 ? Mappings2x : Mappings;
-            foreach (MaterialIconsMappings.Atlas atlas in mappings.mappings)
-            {
-                foreach (MaterialIconsMappings.Icon icon in atlas.icons)
-                {
-                    if (icon.name == name)
-                    {
-                        AtlasTextures atlasTextures = white ? _whiteIconsAtlas : _blackIconsAtlas;
-                        Texture2D targetAtlasTexture = (x2 ? atlasTextures.IconsAtlas2x : atlasTextures.IconsAtlas);
-                        Color[] pixels = targetAtlasTexture.GetPixels(icon.x, targetAtlasTexture.height - icon.y - atlas.iconSize, atlas.iconSize, atlas.iconSize);
 
-                        Texture2D iconTexture = new Texture2D(atlas.iconSize, atlas.iconSize, TextureFormat.RGBA32, false);
-                        iconTexture.name = icon.name;
-                        iconTexture.SetPixels(pixels);
-                        iconTexture.Apply();
+            // Return the already-extracted texture if we have it. The cached texture may have been destroyed externally (e.g. on a
+            // scene change): treat that as a cache miss and re-extract it below.
+            string cacheKey = MakeCacheKey(name, white, x2);
+            if (_iconTexturesCache.TryGetValue(cacheKey, out Texture2D cachedIcon) && cachedIcon != null)
+                return cachedIcon;
 
-                        return iconTexture;
-                    }
-                }
-            }
+            if (!GetIconsLookup(x2).TryGetValue(name, out IconLocation location))
+                return null;
 
-            return null;
+            AtlasTextures atlasTextures = white ? _whiteIconsAtlas : _blackIconsAtlas;
+            Texture2D targetAtlasTexture = x2 ? atlasTextures.IconsAtlas2x : atlasTextures.IconsAtlas;
+
+            int iconSize = location.IconSize;
+            Color[] pixels = targetAtlasTexture.GetPixels(location.Icon.x, targetAtlasTexture.height - location.Icon.y - iconSize, iconSize, iconSize);
+
+            Texture2D iconTexture = new Texture2D(iconSize, iconSize, TextureFormat.RGBA32, false);
+            iconTexture.name = location.Icon.name;
+            iconTexture.SetPixels(pixels);
+            iconTexture.Apply();
+
+            _iconTexturesCache[cacheKey] = iconTexture;
+            return iconTexture;
         }
 
         /// <summary>
@@ -161,6 +187,9 @@ namespace SideXP.UI
         /// <returns>Returns the found category name.</returns>
         public string GetIconCategoryName(string iconName)
         {
+            if (_categories == null)
+                ReloadIconInfos();
+
             iconName = iconName.ToLower();
             foreach (KeyValuePair<string, List<string>> categoryInfo in _categories)
             {
@@ -174,6 +203,54 @@ namespace SideXP.UI
 
 
         #region Private API
+
+        /// <summary>
+        /// Gets the lookup of icons by name for the given size, building it lazily on first use.
+        /// </summary>
+        /// <param name="x2">Do you want the lookup for the doubled-size mappings?</param>
+        /// <returns>Returns the icons lookup, where keys are (lowercase) icon names.</returns>
+        private Dictionary<string, IconLocation> GetIconsLookup(bool x2)
+        {
+            if (x2)
+            {
+                if (_iconsLookup2x == null)
+                    _iconsLookup2x = BuildIconsLookup(Mappings2x);
+                return _iconsLookup2x;
+            }
+
+            if (_iconsLookup == null)
+                _iconsLookup = BuildIconsLookup(Mappings);
+            return _iconsLookup;
+        }
+
+        /// <summary>
+        /// Builds a lookup of icons by name from the given mappings.
+        /// </summary>
+        /// <param name="mappings">The parsed mappings to index.</param>
+        /// <returns>Returns the built lookup, where keys are icon names.</returns>
+        private static Dictionary<string, IconLocation> BuildIconsLookup(MaterialIconsMappings mappings)
+        {
+            Dictionary<string, IconLocation> lookup = new Dictionary<string, IconLocation>();
+            foreach (MaterialIconsMappings.Atlas atlas in mappings.mappings)
+            {
+                foreach (MaterialIconsMappings.Icon icon in atlas.icons)
+                {
+                    // Icon names are expected to be unique across atlases: keep the first occurrence if a duplicate appears.
+                    if (!lookup.ContainsKey(icon.name))
+                        lookup.Add(icon.name, new IconLocation { Icon = icon, IconSize = atlas.iconSize });
+                }
+            }
+            return lookup;
+        }
+
+        /// <summary>
+        /// Builds the key used to cache an extracted icon texture.
+        /// </summary>
+        /// <inheritdoc cref="GetIcon(string, bool, bool)"/>
+        private static string MakeCacheKey(string name, bool white, bool x2)
+        {
+            return $"{name}|{(white ? 'w' : 'b')}|{(x2 ? '2' : '1')}";
+        }
 
         /// <summary>
         /// Gets the Material Icons mapping data, for regular size icons.

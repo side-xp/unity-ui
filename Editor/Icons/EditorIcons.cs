@@ -91,7 +91,7 @@ namespace SideXP.UI.EditorOnly
                 label = new GUIContent();
 
             // Add a space to make sure the icon doesn't appear too close from the label
-            if (!string.IsNullOrWhiteSpace(label.text) && !label.text.StartsWith(' '))
+            if (!string.IsNullOrWhiteSpace(label.text) && label.text[0] != ' ')
                 label.text = ' ' + label.text;
 
             label.image = GetIcon(iconName);

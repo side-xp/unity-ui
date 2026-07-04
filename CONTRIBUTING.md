@@ -56,7 +56,7 @@ instadoc \
 The documentation site's index page, `Documentation~/README.md`, is **generated from the repo-root [`README.md`](./README.md)** so the two never drift, and is therefore **not committed** (it's gitignored). CI rebuilds it on every docs build. The root README carries a few HTML-comment markers that the build interprets:
 
 - `<!-- docs:remove:start -->` … `<!-- docs:remove:end -->`: content shown only on GitHub (e.g. the "Complete documentation available at …" pointer), stripped from the docs site index.
-- `<!-- docs:only:start` … `docs:only:end -->`: content hidden on GitHub (it sits inside the comment) and shown only on the docs site — used to swap repo-relative links (`./CONTRIBUTING.md`, `./LICENSE.md`) for absolute ones that resolve on the published site.
+- `<!-- docs:only:start` … `docs:only:end -->`: content hidden on GitHub (it sits inside the comment) and shown only on the docs site. This is used to swap repo-relative links (`./CONTRIBUTING.md`, `./LICENSE.md`) for absolute ones that resolve on the published site.
 
 The build also rewrites links that point into `./Documentation~/` (used on GitHub to reach the docs from the repo root) so they resolve on the published site, where the index already lives at the `Documentation~/` root.
 
@@ -82,10 +82,10 @@ There are many ways to be involved in our open source projects, and there's abso
 
 So what can you do to help?
 
-- **Discuss with the community**: join our [Discord server](https://discord.gg/bMK2d47JaE), and start chatting with the community or the core team
+- **Discuss with the community**: join our [Discord server](https://discord.gg/G49RUZ9F2N), and start chatting with the community or the core team
 - **Report bugs**: found a bug when using one of our packages? You can report it in the *Issues* tab on GitHub
-- **Suggest improvements**: whether from the [Discord server](https://discord.gg/bMK2d47JaE) or by creating an *Issue*, feel free to talk about your needs or current usage of our solutions, highlight what's missing or what could be better
-- **Request new features**: again, you can use the [Discord server](https://discord.gg/bMK2d47JaE) or create a new *Issue* to ask for something new, see if others may need it too, so we can consider modifying an existing package or even start a new project just for it
+- **Suggest improvements**: whether from the [Discord server](https://discord.gg/G49RUZ9F2N) or by creating an *Issue*, feel free to talk about your needs or current usage of our solutions, highlight what's missing or what could be better
+- **Request new features**: again, you can use the [Discord server](https://discord.gg/G49RUZ9F2N) or create a new *Issue* to ask for something new, see if others may need it too, so we can consider modifying an existing package or even start a new project just for it
 - **Address issues**: you can contribute directly to the codebase by resolving an issue, creating the required assets, or just implementing changes and create a Pull Request on *GitHub*
 
 > By the way, we love to know how you use our tools, so we can make them better!
@@ -156,7 +156,7 @@ We will evaluate whether a Contributor License Agreement (CLA) is required in th
 
 This project is maintained by the team at *Sideways Experiments*.
 
-If you're unsure about any part of the contribution process, feel free to open a discussion on our [Discord server](https://discord.gg/bMK2d47JaE), or by sending an email directly to [contact@sideways-experiments.com](mailto:contact@sideways-experiments.com).
+If you're unsure about any part of the contribution process, feel free to open a discussion on our [Discord server](https://discord.gg/G49RUZ9F2N), or by sending an email directly to [contact@sideways-experiments.com](mailto:contact@sideways-experiments.com).
 
 ---
 

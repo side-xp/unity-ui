@@ -1,12 +1,12 @@
-# UI
+# SideXP - UI (Unity)
 
-Icons and utilities for making and managing clean interfaces.
+Editor UI helpers for using icons in custom editors.
 
 As of now, this package is mostly meant to allow using [Material Icons](https://fonts.google.com/icons?icon.set=Material+Icons&icon.style=Rounded) for our custom editors.
 
 ## Features
 
-- [Material Icons](https://fonts.google.com/icons?icon.set=Material+Icons&icon.style=Rounded) as sprites usable in both Editor and Runtime
+- [Material Icons](https://fonts.google.com/icons?icon.set=Material+Icons&icon.style=Rounded) available in the Editor, handy for custom editors, property drawers and editor windows
 - Icons browser in Editor
 
 ## Dependencies
@@ -39,7 +39,7 @@ As of now, this package is mostly meant to allow using [Material Icons](https://
 Complete documentation available at https://side-xp.github.io/unity-ui
 
 <!-- docs:remove:end -->
-If you need help or just want to chat with the community and the *Sideways Experiments* core team, you're welcome to join our [Discord server](https://discord.gg/bMK2d47JaE)!
+If you need help or just want to chat with the community and the *Sideways Experiments* core team, you're welcome to join our [Discord server](https://discord.gg/G49RUZ9F2N)!
 
 ## Contributing
 
@@ -53,10 +53,14 @@ docs:only:end -->
 ## License
 
 <!-- docs:remove:start -->
-This project is licensed under the [MIT License](./LICENSE.md).
+This project's own source code is licensed under the [MIT License](./LICENSE.md).
+
+This package also bundles [Material Design Icons](https://github.com/google/material-design-icons) by Google, which are licensed separately under the Apache License 2.0. See [Third Party Notices.md](./Third%20Party%20Notices.md) for details.
 <!-- docs:remove:end -->
 <!-- docs:only:start
-This project is licensed under the [MIT License](https://mit-license.org).
+This project's own source code is licensed under the [MIT License](https://mit-license.org).
+
+This package also bundles [Material Design Icons](https://github.com/google/material-design-icons) by Google, which are licensed separately under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0). See the `Third Party Notices.md` file in the package for details.
 docs:only:end -->
 
 ---

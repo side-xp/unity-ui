@@ -1,10 +1,6 @@
-using System.IO;
-
 using UnityEngine;
 
-using SideXP.Core;
-
-namespace SideXP.UI
+namespace SideXP.UI.EditorOnly
 {
 
     /// <summary>
@@ -16,27 +12,10 @@ namespace SideXP.UI
         #region Public API
 
         /// <summary>
-        /// Parses the given mappings file.
+        /// Parses the given mappings file asset.
         /// </summary>
-        /// <inheritdoc cref="ParseContent(string)"/>
-        /// <param name="mappingsJSONFilePath">The path to the mappings JSON file.</param>
-        public static MaterialIconsMappings Parse(string mappingsJSONFilePath)
-        {
-            mappingsJSONFilePath = mappingsJSONFilePath.ToAbsolutePath();
-
-            if (File.Exists(mappingsJSONFilePath))
-            {
-                return ParseContent(File.ReadAllText(mappingsJSONFilePath));
-            }
-            else
-            {
-                Debug.LogWarning($"No mappings JSON file found at {mappingsJSONFilePath}");
-                return null;
-            }
-        }
-
-        /// <inheritdoc cref="Parse(string)"/>
         /// <param name="mappingsJSONFileAsset">The mappings JSON file asset.</param>
+        /// <returns>Returns the parsed data.</returns>
         public static MaterialIconsMappings Parse(TextAsset mappingsJSONFileAsset)
         {
             return ParseContent(mappingsJSONFileAsset.text);

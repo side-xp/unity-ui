@@ -2,7 +2,13 @@
 
 Editor UI helpers for using icons in custom editors.
 
-As of now, this package is mostly meant to allow using [Material Icons](https://fonts.google.com/icons?icon.set=Material+Icons&icon.style=Rounded) for our custom editors.
+---
+
+⚠️ This package has been replaced by the [Editor Icons](https://side-xp.github.io/unity-core/guides/editor-icons) utilities included directly into the core package, so no additional dependency is required anymore for your custom tools.
+
+This repository is archived because a few projects already used it, but we won't update it anymore.
+
+---
 
 ## Features
 

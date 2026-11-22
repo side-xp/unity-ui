@@ -20,7 +20,7 @@ namespace SideXP.UI.EditorOnly
 
 
         #region Public API
-        
+
         /// <summary>
         /// Gets the <see cref="MaterialIcons"/> asset used by this utility.
         /// </summary>

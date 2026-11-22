@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [1.2.1](https://github.com/side-xp/unity-ui/compare/v1.2.0...v1.2.1) (2026-11-22)
+
+
+### Bug Fixes
+
+* deprecation warning ([607d407](https://github.com/side-xp/unity-ui/commit/607d4078f6fbdf3e9e313734fc625d4e67d7c896))
+
 ## [1.2.0](https://github.com/side-xp/unity-ui/compare/v1.1.0...v1.2.0) (2026-07-04)
 
 

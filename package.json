@@ -1,6 +1,6 @@
 {
   "name": "com.side-xp.ui",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "Editor UI helpers for using icons in custom editors.",
   "displayName": "SideXP - UI",
   "unity": "2021.3",
